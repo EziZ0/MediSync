@@ -31,7 +31,11 @@ public class AmbulanceService {
         Optional<Ambulance> optional = ambulanceRepo.findById(id);
         if (optional.isPresent()) {
             Ambulance amb = optional.get();
+            if(amb.getAvailable().equals("FREE")){
             amb.setAvailable("BUSY");
+            }else{
+                amd.setAvailable("FREE");
+            }
             ambulanceRepo.save(amb);
         } else {
             throw new RuntimeException("Ambulance not found");
