@@ -5,25 +5,27 @@ public class HospitalRequest {
     private String location;
     private String contactNumber;
     private int totalBeds;
-    private int totalICUBeds;
-    private int totalDoctors;
     private boolean hasOxygenSupport;
     private boolean hasVentilatorSupport;
     private String speciality;
 
-    public HospitalRequest() {
+    private Double latitude;
+    private Double longitude;
+
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public HospitalRequest(String name, String location, String contactNumber, int totalBeds, int totalICUBeds, int totalDoctors, boolean hasOxygenSupport, boolean hasVentilatorSupport, String speciality) {
-        this.name = name;
-        this.location = location;
-        this.contactNumber = contactNumber;
-        this.totalBeds = totalBeds;
-        this.totalICUBeds = totalICUBeds;
-        this.totalDoctors = totalDoctors;
-        this.hasOxygenSupport = hasOxygenSupport;
-        this.hasVentilatorSupport = hasVentilatorSupport;
-        this.speciality = speciality;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public String getName() {
@@ -58,21 +60,6 @@ public class HospitalRequest {
         this.contactNumber = contactNumber;
     }
 
-    public int getTotalICUBeds() {
-        return totalICUBeds;
-    }
-
-    public void setTotalICUBeds(int totalICUBeds) {
-        this.totalICUBeds = totalICUBeds;
-    }
-
-    public int getTotalDoctors() {
-        return totalDoctors;
-    }
-
-    public void setTotalDoctors(int totalDoctors) {
-        this.totalDoctors = totalDoctors;
-    }
 
     public boolean isHasOxygenSupport() {
         return hasOxygenSupport;

@@ -2,7 +2,6 @@ package com.elzin.patient_service_microservices.Client;
 
 import com.elzin.patient_service_microservices.Model.Ambulance;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.PutExchange;
 import org.springframework.web.bind.annotation.PathVariable;

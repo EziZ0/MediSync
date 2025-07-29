@@ -9,6 +9,7 @@ import com.elzin.patient_service_microservices.Model.Hospital;
 import com.elzin.patient_service_microservices.Model.Patient;
 import com.elzin.patient_service_microservices.Repo.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -44,12 +45,20 @@ public class PatientService {
         }
 
         Ambulance ambulance = ambulances.get(0);
-        Hospital hospital = hospitals.get(0);
+        Hospital hospital = null;
+        if(hospitals.size() > 1){
+           hospital = hospitalClient.findNearest(request.getLongitude(), request.getLatitude());
+        }else {
+             hospital = hospitals.get(0);
+        }
 
-        ambulanceClient.updateStatus(ambulance.getId());
         hospitalClient.updateBeds(hospital.getId(), request.getNoOfBedsToBeBooked());
 
-        Patient patient = new Patient(request.getName(), request.getLocation(), request.getMedicalCondition());
+        ambulanceClient.updateStatus(ambulance.getId());
+
+        Patient patient = new Patient();
+        patient.setName(request.getName());
+        patient.setLocation(request.getLocation());
         patient.setAssignedAmbulance(ambulance.getDriverName());
         patient.setAssignedHospital(hospital.getName());
 

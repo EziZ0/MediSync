@@ -16,6 +16,25 @@ public class Ambulance {
     private String available; // FREE or BUSY
     private String mobileNumber;
 
+    private Double latitiude;
+    private Double longitutde;
+
+    public Double getLongitutde() {
+        return longitutde;
+    }
+
+    public void setLongitutde(Double longitutde) {
+        this.longitutde = longitutde;
+    }
+
+    public Double getLatitiude() {
+        return latitiude;
+    }
+
+    public void setLatitiude(Double latitiude) {
+        this.latitiude = latitiude;
+    }
+
     public String getMobileNumber() {
         return mobileNumber;
     }

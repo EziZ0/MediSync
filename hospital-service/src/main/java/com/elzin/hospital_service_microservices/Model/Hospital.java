@@ -12,16 +12,27 @@ public class Hospital {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    private String name, location, contactNumber, speciality;
-    private int totalBeds, availableBeds, totalICUBeds, availableICUBeds, totalDoctors, availableDoctors;
+    private String name, location, contactNumber;
+    private int totalBeds, availableBeds;
     private boolean hasOxygenSupport, hasVentilatorSupport;
 
-    public String getSpeciality() {
-        return speciality;
+    private Double latitude;
+    private Double longitude;
+
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public UUID getId() {
@@ -72,38 +83,6 @@ public class Hospital {
         this.availableBeds = availableBeds;
     }
 
-    public int getAvailableICUBeds() {
-        return availableICUBeds;
-    }
-
-    public void setAvailableICUBeds(int availableICUBeds) {
-        this.availableICUBeds = availableICUBeds;
-    }
-
-    public int getTotalICUBeds() {
-        return totalICUBeds;
-    }
-
-    public void setTotalICUBeds(int totalICUBeds) {
-        this.totalICUBeds = totalICUBeds;
-    }
-
-    public int getTotalDoctors() {
-        return totalDoctors;
-    }
-
-    public void setTotalDoctors(int totalDoctors) {
-        this.totalDoctors = totalDoctors;
-    }
-
-    public int getAvailableDoctors() {
-        return availableDoctors;
-    }
-
-    public void setAvailableDoctors(int availableDoctors) {
-        this.availableDoctors = availableDoctors;
-    }
-
     public boolean isHasOxygenSupport() {
         return hasOxygenSupport;
     }
@@ -127,10 +106,6 @@ public class Hospital {
         this.location = location;
         this.totalBeds = totalBeds;
         this.availableBeds = availableBeds;
-        this.totalICUBeds = totalICUBeds;
-        this.availableICUBeds = availableICUBeds;
-        this.totalDoctors = totalDoctors;
-        this.availableDoctors = availableDoctors;
         this.hasOxygenSupport = hasOxygenSupport;
         this.hasVentilatorSupport = hasVentilatorSupport;
     }

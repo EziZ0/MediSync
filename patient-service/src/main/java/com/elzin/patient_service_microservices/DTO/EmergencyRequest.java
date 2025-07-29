@@ -3,8 +3,25 @@ package com.elzin.patient_service_microservices.DTO;
 public class EmergencyRequest {
     private String name;
     private String location;
-    private String medicalCondition;
     private Integer noOfBedsToBeBooked;
+    private Double latitude;
+    private Double longitude;
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
 
     public Integer getNoOfBedsToBeBooked() {
         return noOfBedsToBeBooked;
@@ -30,11 +47,4 @@ public class EmergencyRequest {
         this.location = location;
     }
 
-    public String getMedicalCondition() {
-        return medicalCondition;
-    }
-
-    public void setMedicalCondition(String medicalCondition) {
-        this.medicalCondition = medicalCondition;
-    }
 }
